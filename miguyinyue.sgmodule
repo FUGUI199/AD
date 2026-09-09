@@ -1,26 +1,24 @@
-#!name=咪咕音乐全量去广告
-#!desc=精准拦截咪咕音乐开屏素材、日志上报及新版广告 SDK
+#!name=咪咕音乐去广告(防误杀版)
+#!desc=精准拦截咪咕音乐开屏广告与埋点，不影响音乐正常播放
 
 [Rule]
-# 1. 拦截开屏图片/视频素材 CDN (日志中 2MB 的 freetyst 请求)
-DOMAIN, freetyst.nf.migu.cn, REJECT
-DOMAIN-SUFFIX, nf.migu.cn, REJECT
-
-# 2. 拦截新版开屏广告 SDK 与埋点 (日志中的 ggx05 与 uem 域名)
-DOMAIN-KEYWORD, miguvideo, REJECT
+# 1. 精准拦截日志上报与纯广告域名（保留 freetyst.nf.migu.cn 以保证音频正常加载）
+DOMAIN, app.log.nf.migu.cn, REJECT
 DOMAIN, uem.migu.cn, REJECT
 DOMAIN-SUFFIX, ad.miguvideo.com, REJECT
 DOMAIN-SUFFIX, ad.migu.cn, REJECT
 DOMAIN-SUFFIX, sdk.migu.cn, REJECT
 DOMAIN, g.migu.cn, REJECT
+DOMAIN, sdkConfig.migu.cn, REJECT
 
-# 3. 拦截咪咕 IPv6 CDN/广告连接
-IP-CIDR6, 2409:8c62::/32, REJECT, no-resolve
-IP-CIDR6, 2408:8000::/24, REJECT, no-resolve
+# 2. 精准拦截 IPv6 日志与纯广告 IP 段（移除对 CDN IP 的封锁）
+IP-CIDR6, 2409:8c62:f10::/48, REJECT, no-resolve
 
 [URL Rewrite]
-^https?:\/\/.*\.migu\.cn\/.*\/(getStartPage|splash|ad).* _ reject
+# 3. 通过重写只拒绝“开屏/广告接口”，放行音频 API
+^https?:\/\/.*\.migu\.cn\/.*\/(getStartPage|splash|ad\/).* _ reject
 ^https?:\/\/music\.migu\.cn\/v3\/api\/ad\/.* _ reject
+^https?:\/\/ggx\d+\.miguvideo\.com\/request\/.* _ reject
 
 [MITM]
-hostname = %APPEND% *.miguvideo.com, *.migu.cn, music.migu.cn
+hostname = %APPEND% *.migu.cn, music.migu.cn, ggx*.miguvideo.com
