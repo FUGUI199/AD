@@ -1,17 +1,17 @@
-name=咪咕音乐去开屏与广告
-desc=精准拦截咪咕音乐开屏广告、弹窗及横幅
-hostname=*.migu.cn, *.miguvideo.com, ad.migu.cn, sdk.migu.cn
+#!name=咪咕音乐去广告
+#!desc=拦截咪咕音乐开屏广告、弹窗及动态Banner
 
-[rewrite_local]
-# 开屏广告 API 拦截
-^https?:\/\/.*\.migu\.cn\/.*\/(getStartPage|splash|ad).* url reject-200
-^https?:\/\/music\.migu\.cn\/v3\/api\/ad\/.* url reject-200
+[Rule]
+DOMAIN-SUFFIX, ad.miguvideo.com, REJECT
+DOMAIN-SUFFIX, ad.migu.cn, REJECT
+DOMAIN-SUFFIX, sdk.migu.cn, REJECT
+DOMAIN-KEYWORD, migu-ad, REJECT
+DOMAIN, g.migu.cn, REJECT
+DOMAIN, sdkConfig.migu.cn, REJECT
 
-[filter_local]
-# 广告域名与 CDN 拦截
-domain-suffix, ad.miguvideo.com, reject
-domain-suffix, ad.migu.cn, reject
-domain-suffix, sdk.migu.cn, reject
-domain-suffix, migu-ad.com, reject
-domain, g.migu.cn, reject
-domain, sdkConfig.migu.cn, reject
+[URL Rewrite]
+^https?:\/\/.*\.migu\.cn\/.*\/(getStartPage|splash|ad).* _ reject
+^https?:\/\/music\.migu\.cn\/v3\/api\/ad\/.* _ reject
+
+[MITM]
+hostname = %APPEND% *.migu.cn, ad.miguvideo.com
