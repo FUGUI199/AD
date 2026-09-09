@@ -14,6 +14,10 @@ DOMAIN-SUFFIX, ad.migu.cn, REJECT
 DOMAIN-SUFFIX, sdk.migu.cn, REJECT
 DOMAIN, g.migu.cn, REJECT
 
+# 3. 拦截咪咕 IPv6 CDN/广告连接
+IP-CIDR6, 2409:8c62::/32, REJECT, no-resolve
+IP-CIDR6, 2408:8000::/24, REJECT, no-resolve
+
 [URL Rewrite]
 ^https?:\/\/.*\.migu\.cn\/.*\/(getStartPage|splash|ad).* _ reject
 ^https?:\/\/music\.migu\.cn\/v3\/api\/ad\/.* _ reject
