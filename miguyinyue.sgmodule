@@ -19,6 +19,7 @@ IP-CIDR6, 2409:8c62:f10::/48, REJECT, no-resolve
 ^https?:\/\/.*\.migu\.cn\/.*\/(getStartPage|splash|ad\/).* _ reject
 ^https?:\/\/music\.migu\.cn\/v3\/api\/ad\/.* _ reject
 ^https?:\/\/ggx\d+\.miguvideo\.com\/request\/.* _ reject
+^https?:\/\/.*\.migu\.cn\/.*\/preload.* _ reject-200
 
 [MITM]
 hostname = %APPEND% *.migu.cn, music.migu.cn, ggx*.miguvideo.com
