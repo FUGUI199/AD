@@ -1,0 +1,15 @@
+#!name=咪咕音乐去广告
+#!desc=屏蔽咪咕音乐开屏广告、横幅广告及弹窗推送
+
+[Rule]
+DOMAIN-SUFFIX, ad.miguvideo.com, REJECT
+DOMAIN-SUFFIX, ad.migu.cn, REJECT
+DOMAIN-SUFFIX, sdk.migu.cn, REJECT
+DOMAIN-KEYWORD, migu-ad, REJECT
+DOMAIN, g.migu.cn, REJECT
+
+[URL Rewrite]
+^https?:\/\/music\.migu\.cn\/v3\/api\/ad\/.* _ reject
+
+[MITM]
+hostname = %APPEND% music.migu.cn, ad.miguvideo.com
