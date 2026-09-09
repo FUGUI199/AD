@@ -1,22 +1,26 @@
-#!name=咪咕音乐去广告(模拟空响应版)
-#!desc=通过返回空 JSON 骗过咪咕 App 跳过开屏广告
+#!name=咪咕音乐纯去广告
+#!desc=精准拦截咪咕音乐开屏广告、弹窗广告及日志追踪 SDK，不影响音乐正常播放与音质。
+#!author=Custom
+#!category=去广告
 
 [Rule]
-# 拦截纯广告 SDK 与埋点
-DOMAIN, app.log.nf.migu.cn, REJECT
-DOMAIN, uem.migu.cn, REJECT
-DOMAIN-SUFFIX, ad.miguvideo.com, REJECT
-DOMAIN-SUFFIX, ad.migu.cn, REJECT
-DOMAIN-SUFFIX, sdk.migu.cn, REJECT
-DOMAIN, g.migu.cn, REJECT
-DOMAIN, sdkConfig.migu.cn, REJECT
+# 阻断广告与追踪 SDK 域名
+HOST, app.log.nf.migu.cn, REJECT
+HOST, uem.migu.cn, REJECT
+HOST-SUFFIX, ad.miguvideo.com, REJECT
+HOST-SUFFIX, ad.migu.cn, REJECT
+HOST-SUFFIX, sdk.migu.cn, REJECT
+HOST, g.migu.cn, REJECT
+HOST, sdkConfig.migu.cn, REJECT
 
 [URL Rewrite]
-# 注意：这里改用 reject-dict / reject-200，返回空字典，防止 App 报错后调用本地兜底开屏图
-^https?:\/\/.*\.migu\.cn\/.*\/(getStartPage|splash|ad\/).* _ reject-dict
-^https?:\/\/music\.migu\.cn\/v3\/api\/ad\/.* _ reject-dict
-^https?:\/\/ggx\d+\.miguvideo\.com\/request\/.* _ reject-dict
-^https?:\/\/.*\.migu\.cn\/.*\/preload.* _ reject-200
+# 拦截咪咕音乐开屏与营销广告 API（返回空 JSON 字典/200，秒开无广告）
+^https?:\/\/.*\.migu\.cn\/.*\/(getStartPage|splash|ad\/).* reject-dict
+^https?:\/\/music\.migu\.cn\/v3\/api\/ad\/.* reject-dict
+^https?:\/\/ggx\d+\.miguvideo\.com\/request\/.* reject-dict
+^https?:\/\/app\.c\.nf\.migu\.cn\/member\/api\/marketing\/.* reject-dict
+^https?:\/\/app\.c\.nf\.migu\.cn\/payment\/watch-ad reject-200
+^https?:\/\/.*\.migu\.cn\/.*\/preload.* reject-200
 
 [MITM]
-hostname = %APPEND% *.migu.cn, music.migu.cn, ggx*.miguvideo.com
+hostname = *.migu.cn, music.migu.cn, ggx*.miguvideo.com
