@@ -1,17 +1,22 @@
-#!name=咪咕音乐去广告
-#!desc=拦截咪咕音乐开屏广告、弹窗及动态Banner
+#!name=咪咕音乐全量去广告
+#!desc=精准拦截咪咕音乐开屏素材、日志上报及新版广告 SDK
 
 [Rule]
+# 1. 拦截开屏图片/视频素材 CDN (日志中 2MB 的 freetyst 请求)
+DOMAIN, freetyst.nf.migu.cn, REJECT
+DOMAIN-SUFFIX, nf.migu.cn, REJECT
+
+# 2. 拦截新版开屏广告 SDK 与埋点 (日志中的 ggx05 与 uem 域名)
+DOMAIN-KEYWORD, miguvideo, REJECT
+DOMAIN, uem.migu.cn, REJECT
 DOMAIN-SUFFIX, ad.miguvideo.com, REJECT
 DOMAIN-SUFFIX, ad.migu.cn, REJECT
 DOMAIN-SUFFIX, sdk.migu.cn, REJECT
-DOMAIN-KEYWORD, migu-ad, REJECT
 DOMAIN, g.migu.cn, REJECT
-DOMAIN, sdkConfig.migu.cn, REJECT
 
 [URL Rewrite]
 ^https?:\/\/.*\.migu\.cn\/.*\/(getStartPage|splash|ad).* _ reject
 ^https?:\/\/music\.migu\.cn\/v3\/api\/ad\/.* _ reject
 
 [MITM]
-hostname = %APPEND% *.migu.cn, ad.miguvideo.com
+hostname = %APPEND% *.miguvideo.com, *.migu.cn, music.migu.cn
