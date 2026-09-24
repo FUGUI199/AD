@@ -1,2 +1,6 @@
 # 非越
 DOMAIN-SUFFIX,cf.sfcj.org
+
+#okemby反代
+DOMAIN-SUFFIX,fd.jzdj.dpdns.org
+DOMAIN-SUFFIX,ok.draxy.eu.cc
