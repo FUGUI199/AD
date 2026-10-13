@@ -1,15 +1,15 @@
 # 非越，禁日本ip
-DOMAIN-SUFFIX,cf.sfcj.org
+DOMAIN-SUFFIX,cf.sfcj.org, direct
 
 # okemby反代
-DOMAIN-SUFFIX,fd.jzdj.dpdns.org
-DOMAIN-SUFFIX,ok.draxy.eu.cc
+DOMAIN-SUFFIX,fd.jzdj.dpdns.org, direct
+DOMAIN-SUFFIX,ok.draxy.eu.cc, direct
 
 # cc
-#DOMAIN-SUFFIX,wybcs.work
+#DOMAIN-SUFFIX,wybcs.work, direct
 
 # 流光
-DOMAIN-SUFFIX,dqx99999.shop
+DOMAIN-SUFFIX,dqx99999.shop, direct
 
 # 茶百道
-#DOMAIN-SUFFIX,chapanda.site
+#DOMAIN-SUFFIX,chapanda.site, direct
