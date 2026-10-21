@@ -24,3 +24,5 @@ DOMAIN-SUFFIX,dylan.xin, direct
 ## 禁日本IP，禁直连
 # 流光  
 DOMAIN-SUFFIX,dqx99999.shop,PROXY
+# 帝服
+DOMAIN-SUFFIX,di0.uk,PROXY
