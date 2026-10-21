@@ -9,11 +9,8 @@ DOMAIN-SUFFIX,cf.sfcj.org, direct
 DOMAIN-SUFFIX,fd.jzdj.dpdns.org, direct
 DOMAIN-SUFFIX,ok.draxy.eu.cc, direct
 
-# cc
-#DOMAIN-SUFFIX,wybcs.work, direct
-
-# 流光
-DOMAIN-SUFFIX,dqx99999.shop, direct
+# 
+DOMAIN-SUFFIX,wybcs.work, direct
 
 # 茶百道
 #DOMAIN-SUFFIX,chapanda.site, direct
@@ -23,3 +20,7 @@ DOMAIN-SUFFIX,syemby.com, direct
 
 # 宸宇
 DOMAIN-SUFFIX,dylan.xin, direct
+
+## 禁日本IP，禁直连
+# 流光  
+DOMAIN-SUFFIX,dqx99999.shop,PROXY
