@@ -1,6 +1,8 @@
 # 通用反代
-DOMAIN-SUFFIX,auto.dolby.dpdns.org, direct
-DOMAIN-SUFFIX,fd.dirige.de5.net, direct
+DOMAIN-SUFFIX,dpdns.org, direct
+DOMAIN-SUFFIX,de5.net, direct
+DOMAIN-SUFFIX,bbroot.com, direct
+
 
 # 非越，禁日本ip
 DOMAIN-SUFFIX,cf.sfcj.org, direct
