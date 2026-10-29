@@ -1,31 +1,35 @@
+#!name=自用 Emby & 反代分流模块
+#!desc=针对各 Emby 线路及通用反代域名的直连与代理分流控制
+#!category=分流
+
+[Rule]
 # 通用反代
-DOMAIN-SUFFIX,dpdns.org, direct
-DOMAIN-SUFFIX,de5.net, direct
-DOMAIN-SUFFIX,bbroot.com, direct
+DOMAIN-SUFFIX, dpdns.org, DIRECT
+DOMAIN-SUFFIX, de5.net, DIRECT
+DOMAIN-SUFFIX, bbroot.com, DIRECT
 
-
-# 非越，禁日本ip
-DOMAIN-SUFFIX,cf.sfcj.org, direct
+# 非越（禁日本IP）
+DOMAIN-SUFFIX, cf.sfcj.org, DIRECT
 
 # okemby反代
-DOMAIN-SUFFIX,fd.jzdj.dpdns.org, direct
-DOMAIN-SUFFIX,ok.draxy.eu.cc, direct
+DOMAIN-SUFFIX, fd.jzdj.dpdns.org, DIRECT
+DOMAIN-SUFFIX, ok.draxy.eu.cc, DIRECT
 
 # 宸澄
-DOMAIN-SUFFIX,wybcs.work, direct
-DOMAIN-SUFFIX,ccmedia.top, direct
+DOMAIN-SUFFIX, wybcs.work, DIRECT
+DOMAIN-SUFFIX, ccmedia.top, DIRECT
 
 # 茶百道
-#DOMAIN-SUFFIX,chapanda.site, direct
+# DOMAIN-SUFFIX, chapanda.site, DIRECT
 
 # 瞬影
-DOMAIN-SUFFIX,syemby.com, direct
+DOMAIN-SUFFIX, syemby.com, DIRECT
 
 # 宸宇
-DOMAIN-SUFFIX,dylan.xin, direct
+DOMAIN-SUFFIX, dylan.xin, DIRECT
 
-## 禁日本IP，禁直连
-# 流光  
-DOMAIN-SUFFIX,dqx99999.shop,PROXY
+# 禁日本IP，禁直连（走代理）
+# 流光
+DOMAIN-SUFFIX, dqx99999.shop, PROXY
 # 帝服
-DOMAIN-SUFFIX,di0.uk,PROXY
+DOMAIN-SUFFIX, di0.uk, PROXY
