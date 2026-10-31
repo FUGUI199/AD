@@ -3,6 +3,13 @@
 #!category=分流
 
 [Rule]
+# 禁日本IP，禁直连（走代理）
+# 宸澄龙
+DOMAIN-SUFFIX, dragon.wybcs.work, PROXY
+# 帝服
+DOMAIN-SUFFIX, di0.uk, PROXY
+
+
 # 通用反代
 DOMAIN-SUFFIX, dpdns.org, DIRECT
 DOMAIN-SUFFIX, de5.net, DIRECT
@@ -28,8 +35,4 @@ DOMAIN-SUFFIX, syemby.com, DIRECT
 # 宸宇
 DOMAIN-SUFFIX, dylan.xin, DIRECT
 
-# 禁日本IP，禁直连（走代理）
-# 流光
-DOMAIN-SUFFIX, dqx99999.shop, PROXY
-# 帝服
-DOMAIN-SUFFIX, di0.uk, PROXY
+
