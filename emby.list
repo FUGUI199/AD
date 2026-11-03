@@ -17,6 +17,7 @@ DOMAIN-SUFFIX, bbroot.com, DIRECT
 
 # 非越（禁日本IP）
 DOMAIN-SUFFIX, cf.sfcj.org, DIRECT
+DOMAIN-SUFFIX, emby.pro, DIRECT
 
 # okemby反代
 DOMAIN-SUFFIX, ok.draxy.eu.cc, DIRECT
