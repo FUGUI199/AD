@@ -22,8 +22,8 @@ DOMAIN-SUFFIX, cf.sfcj.org, DIRECT
 DOMAIN-SUFFIX, ok.draxy.eu.cc, DIRECT
 
 # 宸澄
-#DOMAIN-SUFFIX, wybcs.work, DIRECT
-#DOMAIN-SUFFIX, ccmedia.top, DIRECT
+DOMAIN-SUFFIX, wybcs.work, DIRECT
+DOMAIN-SUFFIX, ccmedia.top, DIRECT
 
 # 茶百道
 # DOMAIN-SUFFIX, chapanda.site, DIRECT
@@ -32,6 +32,6 @@ DOMAIN-SUFFIX, ok.draxy.eu.cc, DIRECT
 DOMAIN-SUFFIX, syemby.com, DIRECT
 
 # 宸宇
-#DOMAIN-SUFFIX, dylan.xin, DIRECT
+DOMAIN-SUFFIX, dylan.xin, DIRECT
 
 
