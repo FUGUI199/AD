@@ -8,6 +8,9 @@
 DOMAIN-SUFFIX, dragon.wybcs.work, PROXY
 # 帝服
 DOMAIN-SUFFIX, di0.uk, PROXY
+# 合欢片
+DOMAIN-SUFFIX, hehuan.riroro.com, PROXY
+
 
 ## 直连
 # 通用反代
